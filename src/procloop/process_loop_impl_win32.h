@@ -1,7 +1,7 @@
 #pragma once
 
 // ft_base_lib headers
-#include "build/platform.h"
+#include "base/platform.h"
 
 #ifdef FT_OS_WINDOWS
 

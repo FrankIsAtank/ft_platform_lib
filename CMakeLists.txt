@@ -38,4 +38,5 @@ list (APPEND HPP_FULL ${SRC_PROCLOOP_HPP})
 add_library(FT_PLATFORM_LIB ${CPP_FULL} ${HPP_FULL})
 set_target_properties(FT_PLATFORM_LIB PROPERTIES OUTPUT_NAME ft_platform_lib)
 
-
+# define default include path
+target_include_directories(FT_PLATFORM_LIB PRIVATE "${DIR_SRC}")
