@@ -5,6 +5,7 @@
 
 namespace ft {
 namespace os {
+namespace procloop {
 
 // Platform-dependent component of this class
 class process_loop_impl;
@@ -21,5 +22,6 @@ public:
 
 };  // class render_frame
 
+}   // namespace procloop
 }   // namespace os
 }   // namespace ft

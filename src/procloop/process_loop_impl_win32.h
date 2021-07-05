@@ -7,6 +7,7 @@
 
 namespace ft {
 namespace os {
+namespace procloop {
 
 class process_loop_impl
 {
@@ -17,6 +18,7 @@ public:
 
 };  // class process_loop_impl
 
+}   // namespace procloop
 }   // namespace os
 }   // namespace ft
 

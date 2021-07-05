@@ -6,9 +6,9 @@
 #include "process_loop_impl_win32.h"
 
 // Include Windows API headers
-#include "windows_include.h"
+#include "base/windows_include.h"
 
-int ft::os::process_loop_impl::execute()
+int ft::os::procloop::process_loop_impl::execute()
 {
     ::MSG msg;
     ::BOOL result;
