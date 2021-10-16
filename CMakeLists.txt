@@ -4,14 +4,15 @@ cmake_minimum_required(VERSION 3.18)
 # Project title
 project(FT_PLATFORM_LIB)
 
+# Project name
+set(OUT_NAME "ft_platform_lib")
+
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # specify source file directories
 set(DIR_SRC "${FT_PLATFORM_LIB_SOURCE_DIR}/src")
-set(DIR_BASE "${DIR_SRC}/base")
-set(DIR_PROCLOOP "${DIR_SRC}/procloop")
 
 # source files
 file (GLOB CPP_FULL "")
@@ -36,7 +37,15 @@ ft_add_group("procloop")
 
 # include the files
 add_library(FT_PLATFORM_LIB ${CPP_FULL} ${HPP_FULL})
-set_target_properties(FT_PLATFORM_LIB PROPERTIES OUTPUT_NAME ft_platform_lib)
+set_target_properties(FT_PLATFORM_LIB PROPERTIES OUTPUT_NAME ${OUT_NAME})
 
-# define default include path
-target_include_directories(FT_PLATFORM_LIB PRIVATE "${DIR_SRC}")
+
+set(FT_LIB_ROOT $ENV{FT_ROOT})
+
+# output files to common directory
+set_target_properties(FT_PLATFORM_LIB PROPERTIES
+	ARCHIVE_OUTPUT_DIRECTORY_DEBUG "${FT_LIB_ROOT}/bin/Debug"
+	ARCHIVE_OUTPUT_DIRECTORY_RELEASE "${FT_LIB_ROOT}/bin/Release"
+)
+
+include_directories(${FT_LIB_ROOT}/ft_platform_lib/src)
